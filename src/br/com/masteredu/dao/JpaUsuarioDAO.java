@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
@@ -44,9 +45,18 @@ public class JpaUsuarioDAO implements IUsuarioDAO{
 
 	@Override
 	public Usuario getUsuario(String login, String senha) {
+		String consulta = "select u from Cachorro u where u.login = :login and u.senha = :senha";
+		TypedQuery<Usuario> query =
+		manager.createQuery(consulta, Usuario.class);
+		query.setParameter("login", login);
+		query.setParameter("senha", senha);
 		
-		return null;
+		Usuario usuario = query.getSingleResult();
+		
+		return usuario;
 	}
+	
+	
 	
 	
 	

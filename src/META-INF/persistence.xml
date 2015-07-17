@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+     http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+ <persistence-unit name="masteredu-mysql">
+
+   <!-- provedor/implementacao do JPA -->
+   <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+   <!-- entidades mapeadas -->
+   
+   		<class>br.com.masteredu.model.Contato</class>
+		<class>br.com.masteredu.model.Unidade</class>
+		<class>br.com.masteredu.model.Aluno</class>
+		<class>br.com.masteredu.model.Professor</class>
+		<class>br.com.masteredu.model.Responsavel</class>
+		<class>br.com.masteredu.model.Endereco</class>
+		<class>br.com.masteredu.model.Nota</class>
+		<class>br.com.masteredu.model.Conceito</class>
+		<class>br.com.masteredu.model.FichaMedica</class>
+		<class>br.com.masteredu.model.Frequencia</class>
+		<class>br.com.masteredu.model.Boletim</class>
+		<class>br.com.masteredu.model.Disciplina</class>
+		<class>br.com.masteredu.model.Documento</class>
+		<class>br.com.masteredu.model.Funcionario</class>
+		<class>br.com.masteredu.model.HistoricoEscolar</class>
+		<class>br.com.masteredu.model.HorarioDeAula</class>
+		<class>br.com.masteredu.model.Matricula</class>
+		<class>br.com.masteredu.model.Ocorrencia</class>
+		<class>br.com.masteredu.model.Prova</class>
+		<class>br.com.masteredu.model.Turma</class>
+		<class>br.com.masteredu.model.Unidade</class>
+		<class>br.com.masteredu.model.Questao</class>
+		<class>br.com.masteredu.model.Alternativa</class>
+
+   <properties>
+  <!-- dados da conexao  Definidos no DataSource no spring-context.xml
+   <property name="javax.persistence.jdbc.driver" 
+       value="com.mysql.jdbc.Driver" />
+  <property name="javax.persistence.jdbc.url" 
+      value="jdbc:mysql://localhost:3311/doacao" />
+  <property name="javax.persistence.jdbc.user" 
+      value="root" />
+  <property name="javax.persistence.jdbc.password" 
+      value="root" />-->
+
+   <!--  propriedades do hibernate -->
+   <property name="hibernate.dialect" 
+      value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+  <property name="hibernate.show_sql" value="true" />
+  <property name="hibernate.format_sql" value="true" />
+
+  <!--  atualiza o banco, gera as tabelas se for preciso -->
+  <property name="hibernate.hbm2ddl.auto" value="update" />
+    
+   </properties>
+ </persistence-unit>
+ 
+ <persistence-unit name="masteredu-hsqldb">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.caelum.financas.modelo.Conta</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:doacao" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	
+	<persistence-unit name="masteredu-postgres">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.caelum.financas.modelo.Conta</class>
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/doacao" />
+			<property name="javax.persistence.jdbc.user" value="rafaelpbaptista" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+
+	<!-- Possíveis definições para dialeto Oracle 10g: org.hibernate.dialect.Oracle10gDialect 
+		Microsoft SQL Server 2008: org.hibernate.dialect.SQLServerDialect PostgresSQL 
+		8.3.7: org.hibernate.dialect.PostgreSQLDialect MySQL 5.1: org.hibernate.dialect.MySQL5InnoDBDialect 
+		DB2 9.1: org.hibernate.dialect.DB2Dialect Sybase ASE 15: org.hibernate.dialect.SybaseASE15Dialect 
+		HSQLDB: org.hibernate.dialect.HSQLDialect -->
+</persistence>

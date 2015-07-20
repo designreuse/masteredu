@@ -21,8 +21,12 @@ import br.com.masteredu.model.enums.EstadoCivil;
 import br.com.masteredu.model.enums.Sexo;
 
 @Entity
-public class Aluno extends Usuario {
+public class Aluno {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	
 	private String nome;
 	
 	private String nacionalidade;
@@ -49,6 +53,9 @@ public class Aluno extends Usuario {
 	private String naturalidade;
 	
 	private String observacao;
+	
+	@OneToOne
+	Usuario usuario;
 	
 	@Enumerated(EnumType.STRING)
 	private Sexo sexo;
@@ -86,8 +93,21 @@ public class Aluno extends Usuario {
 	
 	
 	// GETTERs AND SETTERs	
+	
 	public String getNome() {
 		return nome;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 	public void setNome(String nome) {

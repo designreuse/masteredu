@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard</title>
+    <title>MasterEdu | Aluno</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -45,7 +45,7 @@
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            MasterEdu
                         </div>
                     </li>
                     <li class="active">

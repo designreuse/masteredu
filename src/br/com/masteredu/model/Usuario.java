@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 
 import br.com.masteredu.model.enums.Situacao;
 
-@MappedSuperclass
+@Entity
 public abstract class Usuario {
 
 	@Id
@@ -35,6 +35,18 @@ public abstract class Usuario {
 	
 	@Temporal(TemporalType.DATE)
 	private Calendar ultimoLogin;
+	
+	@OneToOne(mappedBy="usuario")
+	Aluno aluno;
+	
+	@OneToOne(mappedBy="usuario")
+	Funcionario funcionario;
+	
+	@OneToOne(mappedBy="usuario")
+	Professor professor;
+	
+	@OneToOne(mappedBy="usuario")
+	Responsavel responsavel;
 	
 
 	// GETTERs AND SETTERs
@@ -73,5 +85,39 @@ public abstract class Usuario {
 	public void setUltimoLogin(Calendar ultimoLogin) {
 		this.ultimoLogin = ultimoLogin;
 	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public Responsavel getResponsavel() {
+		return responsavel;
+	}
+
+	public void setResponsavel(Responsavel responsavel) {
+		this.responsavel = responsavel;
+	}
+	
+	
 	
 }

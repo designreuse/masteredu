@@ -1,6 +1,5 @@
 package br.com.masteredu.controller;
 
-import java.sql.Date;
 import java.util.Calendar;
 
 import javax.servlet.http.HttpSession;
@@ -10,16 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
-
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
-
 import br.com.masteredu.dao.interfaces.IUsuarioDAO;
+import br.com.masteredu.model.Aluno;
+import br.com.masteredu.model.Professor;
+import br.com.masteredu.model.Responsavel;
 import br.com.masteredu.model.Usuario;
 
 @Controller
@@ -35,27 +32,37 @@ public class UsuarioController {
 	}
 
 	@RequestMapping(value = "/logar", method = RequestMethod.POST)
-	public String logar(@RequestParam("login") String login, @RequestParam("senha") String senha, @RequestParam("") String tipoUsuario, HttpSession sessao) {
+	public String logar(@RequestParam("login") String login, @RequestParam("senha") String senha, 
+			@RequestParam("") String tipoUsuario, HttpSession sessao) {
 		
 		if (tipoUsuario != null) {
-			System.out.println(login);
-			System.out.println(senha);
-			System.out.println(tipoUsuario);
-			return "index";
+			if (tipoUsuario.equals("aluno")) {
+				Usuario usuario = validarUsuario(login, senha);
+				Aluno usuarioLogado = usuario.getAluno();
+				sessao.setAttribute("usuarioLogado", usuarioLogado);
+				return "redirect:/aluno/inicio";
+			} else if (tipoUsuario.equals("professor")) {
+				Usuario usuario = validarUsuario(login, senha);
+				Professor usuarioLogado = usuario.getProfessor();
+				sessao.setAttribute("usuarioLogado", usuarioLogado);
+				return "redirect:/professor/inicio";
+			} else if (tipoUsuario.equals("responsavel")) {
+				Usuario usuario = validarUsuario(login, senha);
+				Responsavel usuarioLogado = usuario.getResponsavel();
+				sessao.setAttribute("usuarioLogado", usuarioLogado);
+				return "redirect:/responsavel/inicio";
+			}
 		} else {
 			System.out.println("Tipo de usuário nulo");
 		}
-		return "index";
-		/*
+		return "index";   
+	}
+
+	private Usuario validarUsuario(String login, String senha) {
 		Usuario usuario = dao.getUsuario(login, senha);
-		if (usuario == null) {
-			return "loginFalho";
-		} else {
-			usuario.setUltimoLogin(Calendar.getInstance());
-			dao.editar(usuario);
-			sessao.setAttribute("usuario", usuario);
-			return "redirect:/usuario/autenticado";
-		}*/
+		usuario.setUltimoLogin(Calendar.getInstance());
+		dao.editar(usuario);
+		return usuario;
 	}
 
 	@RequestMapping("/usuario/autenticado")

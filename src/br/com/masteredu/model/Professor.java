@@ -17,7 +17,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Professor extends Usuario {
+public class Professor {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
 	private String nome;
 	
@@ -41,6 +45,9 @@ public class Professor extends Usuario {
 	@OneToOne
 	private Endereco endereco;
 	
+	@OneToOne
+	Usuario usuario;
+	
 	@OneToMany(mappedBy = "professor")
 	private List<Contato> contatos;
 
@@ -58,8 +65,21 @@ public class Professor extends Usuario {
 	
 	
 	// GETTERs AND SETTERs	
+	
 	public String getNome() {
 		return nome;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 	public void setNome(String nome) {

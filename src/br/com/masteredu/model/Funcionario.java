@@ -12,12 +12,36 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Funcionario extends Usuario {
+public class Funcionario {
 		
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	
 	@OneToOne
 	private Endereco endereco;
 	
 	@OneToMany(mappedBy="funcionario")
 	private List<Contato> contatos;
+	
+	@OneToOne
+	Usuario usuario;
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public long getId() {
+		return id;
+	}
+	
+	
+	
+	
+	
 
 }

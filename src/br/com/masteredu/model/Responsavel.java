@@ -5,7 +5,11 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-public class Responsavel extends Usuario {
+public class Responsavel  {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
 	
 	private String nome;
 	
@@ -21,10 +25,25 @@ public class Responsavel extends Usuario {
 	@OneToMany(mappedBy = "responsavel")
 	private List<Aluno> alunos;
 	
+	@OneToOne
+	Usuario usuario;
 	
-	// GETTERs AND SETTERs	
+	
+	// GETTERs AND SETTERs		
 	public String getNome() {
 		return nome;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public long getId() {
+		return id;
 	}
 
 	public void setNome(String nome) {

@@ -23,6 +23,13 @@ public class AlunoController {
 		return "teste";
 	}
 	
+	@RequestMapping("aluno/inicio")
+	public String alunoHome () {
+		
+		
+		return "aluno/home";
+	}
+	
 	@RequestMapping("adicionaAluno")
 	public String adicionaAluno(){
 		try {

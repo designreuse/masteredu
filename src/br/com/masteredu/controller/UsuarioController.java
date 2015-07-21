@@ -37,18 +37,15 @@ public class UsuarioController {
 		
 		if (tipoUsuario != null) {
 			if (tipoUsuario.equals("aluno")) {
-				Usuario usuario = validarUsuario(login, senha);
-				Aluno usuarioLogado = usuario.getAluno();
+				Aluno usuarioLogado = validarUsuario(login, senha).getAluno();
 				sessao.setAttribute("usuarioLogado", usuarioLogado);
 				return "redirect:/aluno/inicio";
 			} else if (tipoUsuario.equals("professor")) {
-				Usuario usuario = validarUsuario(login, senha);
-				Professor usuarioLogado = usuario.getProfessor();
+				Professor usuarioLogado = validarUsuario(login, senha).getProfessor();
 				sessao.setAttribute("usuarioLogado", usuarioLogado);
 				return "redirect:/professor/inicio";
 			} else if (tipoUsuario.equals("responsavel")) {
-				Usuario usuario = validarUsuario(login, senha);
-				Responsavel usuarioLogado = usuario.getResponsavel();
+				Responsavel usuarioLogado = validarUsuario(login, senha).getResponsavel();
 				sessao.setAttribute("usuarioLogado", usuarioLogado);
 				return "redirect:/responsavel/inicio";
 			}
@@ -58,12 +55,7 @@ public class UsuarioController {
 		return "index";   
 	}
 
-	private Usuario validarUsuario(String login, String senha) {
-		Usuario usuario = dao.getUsuario(login, senha);
-		usuario.setUltimoLogin(Calendar.getInstance());
-		dao.editar(usuario);
-		return usuario;
-	}
+	
 
 	@RequestMapping("/usuario/autenticado")
 	public ModelAndView usuarioAutenticado(
@@ -80,4 +72,10 @@ public class UsuarioController {
 		return "/usuario/forgot_password";
 	}
 
+	private Usuario validarUsuario(String login, String senha) {
+		Usuario usuario = dao.getUsuario(login, senha);
+		usuario.setUltimoLogin(Calendar.getInstance());
+		dao.editar(usuario);
+		return usuario;
+	}
 }

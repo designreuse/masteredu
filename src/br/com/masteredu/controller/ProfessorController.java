@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.masteredu.dao.interfaces.IProfessorDAO;
+import br.com.masteredu.exceptions.ProfessorInvalidoException;
+import br.com.masteredu.model.Professor;
 
 @Controller
 @Transactional
@@ -18,6 +20,22 @@ public class ProfessorController {
 	public String alunoHome () {
 		
 		return "professor/home";
+	}
+	
+	public String adicionaProfessor( Professor professor) {
+		try {
+			validaProfessor(professor);
+			dao.adicionar(professor);
+			return "professor/adicionado";
+		} catch (ProfessorInvalidoException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	private void validaProfessor(Professor professor) throws ProfessorInvalidoException {
+		
+		
 	}
 
 }

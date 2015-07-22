@@ -34,11 +34,11 @@
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.jsp">Profile</a></li>
-                            <li><a href="contacts.jsp">Contacts</a></li>
-                            <li><a href="mailbox.jsp">Mailbox</a></li>
+                            <li><a href="profile.jsp">Perfil</a></li>
+                            <li><a href="contacts.jsp">Contatos</a></li>
+                            <li><a href="mailbox.jsp">Email</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.jsp">Logout</a></li>
+                            <li><a href="login.jsp">Sair</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -348,7 +348,7 @@
 
                 <li>
                     <a href="login.jsp">
-                        <i class="fa fa-sign-out"></i> Log out
+                        <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
             </ul>
@@ -357,16 +357,16 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
-                    <h2>Wizard</h2>
+                    <h2>Formulário</h2>
                     <ol class="breadcrumb">
                         <li>
                             <a href="index.jsp">Início</a>
                         </li>
                         <li>
-                            <a>Forms</a>
+                            <a>Cadastro</a>
                         </li>
                         <li class="active">
-                            <strong>Cadastro</strong>
+                            <strong>Aluno</strong>
                         </li>
                     </ol>
                 </div>
@@ -403,18 +403,22 @@
                                 Adicionar aluno
                             </h2>
                             <p>
-                                This example show how to use Steps with jQuery Validation plugin.
+                                Preenche todos os dados de um aluno e o adiciona
                             </p>
 
-                            <form id="form" action="#" class="wizard-big">
-                                <h1>Account</h1>
+                            <form id="form" action="adicionaAluno" class="wizard-big">
+                                <h1>Informações pessoais</h1>
                                 <fieldset>
-                                    <h2>Account Information</h2>
+                                    <h2>Dados</h2>
                                     <div class="row">
                                         <div class="col-lg-8">
                                             <div class="form-group">
-                                                <label>Username *</label>
-                                                <input id="userName" name="userName" type="text" class="form-control required">
+                                                <label>Nome *</label>
+                                                <input id="nome" name="nome" type="text" class="form-control required">
+                                            </div>
+                                             <div class="form-group">
+                                                <label>Nome *</label>
+                                                <input id="nome" name="nome" type="text" class="form-control required">
                                             </div>
                                             <div class="form-group">
                                                 <label>Password *</label>
@@ -435,7 +439,45 @@
                                     </div>
 
                                 </fieldset>
-                                <h1>Profile</h1>
+                                
+                                <h1>Endereço</h1>
+                                <fieldset>
+                                    <h2>Endereço</h2>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Logradouro *</label>
+                                                <input id="logradouro" name="logradouro" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Número *</label>
+                                                <input id="numero" name="numero" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Complemento *</label>
+                                                <input id="complemento" name="complemento" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>CEP *</label>
+                                                <input id="cep" name="cep" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Bairro *</label>
+                                                <input id="bairro" name="bairro" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Cidade *</label>
+                                                <input id="cidade" name="cidade" type="text" class="form-control required">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>UF *</label>
+                                                <input id="uf" name="uf" type="text" class="form-control required">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </fieldset>
+                                <h1>Responsável</h1>
                                 <fieldset>
                                     <h2>Profile Information</h2>
                                     <div class="row">
@@ -462,7 +504,7 @@
                                     </div>
                                 </fieldset>
 
-                                <h1>Warning</h1>
+                                <h1>Ficha médica</h1>
                                 <fieldset>
                                     <div class="text-center" style="margin-top: 120px">
                                         <h2>You did it Man :-)</h2>

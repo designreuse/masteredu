@@ -49,12 +49,12 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="index.jsp"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                        <a href="index.jsp"><i class="fa fa-th-large"></i> <span class="nav-label">Cadastrar</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="index.jsp">Dashboard v.1</a></li>
-                            <li><a href="dashboard_2.jsp">Dashboard v.2</a></li>
-                            <li><a href="dashboard_3.jsp">Dashboard v.3</a></li>
-                            <li><a href="dashboard_4_1.jsp">Dashboard v.4</a></li>
+                            <li class="active"><a href="index.jsp">Aluno</a></li>
+                            <li><a href="dashboard_2.jsp">Professor</a></li>
+                            <li><a href="dashboard_3.jsp">Funcionário</a></li>
+                            <li><a href="dashboard_4_1.jsp">Responsável</a></li>
                         </ul>
                     </li>
                     <li>
@@ -351,7 +351,7 @@
 
                 <li>
                     <a href="login.jsp">
-                        <i class="fa fa-sign-out"></i> Log out
+                        <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
                 <li>

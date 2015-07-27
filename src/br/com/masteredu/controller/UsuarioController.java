@@ -55,6 +55,11 @@ public class UsuarioController {
 		return "index";   
 	}
 
+	@RequestMapping("/logout")
+	public String logout() {
+		
+		return "redirect:/";
+	}
 	
 
 	@RequestMapping("/usuario/autenticado")

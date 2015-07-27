@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -8,19 +8,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Dashboard</title>
+    <title>MasterEdu | Aluno</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
 
     <!-- Toastr style -->
-    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/plugins/toastr/toastr.min.css"/>" rel="stylesheet">
 
     <!-- Gritter -->
-    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <link href="<c:url value="/resources/js/plugins/gritter/jquery.gritter.css"/>" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<c:url value="/resources/css/animate.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
 
 </head>
 
@@ -30,31 +30,29 @@
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
                     <li class="nav-header">
-                        <div class="dropdown profile-element"> <span>
-                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                             </span>
+                        <div class="dropdown profile-element"> 
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                                <li><a href="profile.jsp">Profile</a></li>
-                                <li><a href="contacts.jsp">Contacts</a></li>
-                                <li><a href="mailbox.jsp">Mailbox</a></li>
+                                <li><a href="profile.jsp">Perfil</a></li>
+                                <li><a href="contacts.jsp">Contatos</a></li>
+                                <li><a href="mailbox.jsp">Email</a></li>
                                 <li class="divider"></li>
-                                <li><a href="login.jsp">Logout</a></li>
+                                <li><a href="login.jsp">Sair</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
-                            IN+
+                            ME
                         </div>
                     </li>
                     <li class="active">
-                        <a href="index.jsp"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                        <a href="index.jsp"><i class="fa fa-th-large"></i> <span class="nav-label">Cadastrar</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li class="active"><a href="index.jsp">Dashboard v.1</a></li>
-                            <li><a href="dashboard_2.jsp">Dashboard v.2</a></li>
-                            <li><a href="dashboard_3.jsp">Dashboard v.3</a></li>
-                            <li><a href="dashboard_4_1.jsp">Dashboard v.4</a></li>
+                            <li class="active"><a href="index.jsp">Aluno</a></li>
+                            <li><a href="dashboard_2.jsp">Professor</a></li>
+                            <li><a href="dashboard_3.jsp">Funcionário</a></li>
+                            <li><a href="dashboard_4_1.jsp">Responsável</a></li>
                         </ul>
                     </li>
                     <li>
@@ -250,7 +248,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                    <span class="m-r-sm text-muted welcome-message">Bem-vindo ao MasterEdu.</span>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -260,7 +258,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.jsp" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a7.jpg">
+                                    <img alt="image" class="img-circle" src="<c:url value="/resources/img/a7.jpg"/>">
                                 </a>
                                 <div class="media-body">
                                     <small class="pull-right">46h ago</small>
@@ -273,7 +271,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.jsp" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/a4.jpg">
+                                    <img alt="image" class="img-circle" src="<c:url value="/resources/img/a4.jpg"/>">
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right text-navy">5h ago</small>
@@ -286,7 +284,7 @@
                         <li>
                             <div class="dropdown-messages-box">
                                 <a href="profile.jsp" class="pull-left">
-                                    <img alt="image" class="img-circle" src="img/profile.jpg">
+                                    <img alt="image" class="img-circle" src="<c:url value="/resources/img/profile.jpg"/>">
                                 </a>
                                 <div class="media-body ">
                                     <small class="pull-right">23h ago</small>
@@ -351,7 +349,7 @@
 
                 <li>
                     <a href="login.jsp">
-                        <i class="fa fa-sign-out"></i> Log out
+                        <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
                 <li>
@@ -560,7 +558,7 @@
 
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/profile.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/profile.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">5m ago</small>
@@ -572,7 +570,7 @@
 
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a2.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a2.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">2h ago</small>
@@ -582,7 +580,7 @@
                                                 </div>
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a3.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a3.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">2h ago</small>
@@ -592,7 +590,7 @@
                                                 </div>
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a4.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a4.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right text-navy">5h ago</small>
@@ -606,7 +604,7 @@
                                                 </div>
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a5.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a5.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">2h ago</small>
@@ -623,7 +621,7 @@
                                                 </div>
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/profile.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/profile.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">23h ago</small>
@@ -633,7 +631,7 @@
                                                 </div>
                                                 <div class="feed-element">
                                                     <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="img/a7.jpg">
+                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a7.jpg"/>">
                                                     </a>
                                                     <div class="media-body ">
                                                         <small class="pull-right">46h ago</small>
@@ -909,7 +907,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a1.jpg"/>">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -927,7 +925,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a2.jpg"/>">
                                     </div>
                                     <div class="media-body">
                                         The point of using Lorem Ipsum is that it has a more-or-less normal.
@@ -939,7 +937,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a3.jpg"/>">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -957,7 +955,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a4.jpg"/>">
                                     </div>
 
                                     <div class="media-body">
@@ -970,7 +968,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a8.jpg"/>">
                                     </div>
                                     <div class="media-body">
 
@@ -983,7 +981,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a7.jpg"/>">
                                     </div>
                                     <div class="media-body">
                                         Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
@@ -995,7 +993,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a3.jpg"/>">
 
                                         <div class="m-t-xs">
                                             <i class="fa fa-star text-warning"></i>
@@ -1013,7 +1011,7 @@
                             <div class="sidebar-message">
                                 <a href="#">
                                     <div class="pull-left text-center">
-                                        <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
+                                        <img alt="image" class="img-circle message-avatar" src="<c:url value="/resources/img/a4.jpg"/>">
                                     </div>
                                     <div class="media-body">
                                         Uncover many web sites still in their infancy. Various versions have.
@@ -1259,43 +1257,43 @@
     </div>
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<c:url value="/resources/js/jquery-2.1.1.js"/>"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/metisMenu/jquery.metisMenu.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/slimscroll/jquery.slimscroll.min.js"/>"></script>
 
     <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.spline.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="<c:url value="/resources/js/plugins/flot/jquery.flot.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/flot/jquery.flot.tooltip.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/flot/jquery.flot.spline.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/flot/jquery.flot.resize.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/flot/jquery.flot.pie.js"/>"></script>
 
     <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <script src="js/demo/peity-demo.js"></script>
+    <script src="<c:url value="/resources/js/plugins/peity/jquery.peity.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/demo/peity-demo.js"/>"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="<c:url value="/resources/js/inspinia.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/pace/pace.min.js"/>"></script>
 
     <!-- jQuery UI -->
-    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/jquery-ui/jquery-ui.min.js"/>"></script>
 
     <!-- GITTER -->
-    <script src="js/plugins/gritter/jquery.gritter.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/gritter/jquery.gritter.min.js"/>"></script>
 
     <!-- Sparkline -->
-    <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/sparkline/jquery.sparkline.min.js"/>"></script>
 
     <!-- Sparkline demo data  -->
-    <script src="js/demo/sparkline-demo.js"></script>
+    <script src="<c:url value="/resources/js/demo/sparkline-demo.js"/>"></script>
 
     <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/chartJs/Chart.min.js"/>"></script>
 
     <!-- Toastr -->
-    <script src="js/plugins/toastr/toastr.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/toastr/toastr.min.js"/>"></script>
 
 
     <script>

@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MasterEdu | Aluno</title>
+    <title>MasterEdu | ADM</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -39,7 +39,7 @@
                                 <li><a href="contacts.jsp">Contatos</a></li>
                                 <li><a href="mailbox.jsp">Email</a></li>
                                 <li class="divider"></li>
-                                <li><a href="logout">Sair</a></li>
+                                <li><a href="login.jsp">Sair</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -348,7 +348,7 @@
 
 
                 <li>
-                    <a href="logout">
+                    <a href="login.jsp">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>

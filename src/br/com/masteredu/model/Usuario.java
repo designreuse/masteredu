@@ -20,7 +20,7 @@ import javax.persistence.TemporalType;
 import br.com.masteredu.model.enums.Situacao;
 
 @Entity
-public abstract class Usuario {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

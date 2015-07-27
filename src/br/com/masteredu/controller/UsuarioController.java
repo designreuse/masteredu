@@ -90,12 +90,12 @@ public class UsuarioController {
 		return mav;
 		}
 	
-	@RequestMapping("/resetarSenha")
+	@RequestMapping("/usuario/resetarSenha")
 	public String resetarSenha(){
 		return "/usuario/forgot_password";
 	}
 	
-	@RequestMapping
+	@RequestMapping("/usuario/desativar")
 	public String desativarUsuario(Usuario usuario) {
 		usuario.setSituacao(Situacao.DESATIVADO);
 		dao.editar(usuario);
@@ -103,24 +103,28 @@ public class UsuarioController {
 		return "";
 	}
 	
+	@RequestMapping("/usuario/ativar")
 	public String ativarUsuario(Usuario usuario) {
 		usuario.setSituacao(Situacao.ATIVADO);
 		dao.editar(usuario);
 		return "";
 	}
 	
+	@RequestMapping("/usuario/adicionar")
 	public String adicionarUsuario (Usuario usuario) {
 		dao.adicionar(usuario);
 		
 		return "";
 	}
 	
+	@RequestMapping("/usuario/excluir")
 	public String excluirUsuario(Usuario usuario) {
 		dao.editar(usuario);
 		
 		return "";
 	}
 	
+	@RequestMapping("/usuario/listar")
 	public ModelAndView listarUsuarios() {
 		List<Usuario> usuarios = dao.listar();
 		

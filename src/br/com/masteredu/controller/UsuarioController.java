@@ -79,17 +79,6 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 	
-
-	@RequestMapping("/usuario/autenticado")
-	public ModelAndView usuarioAutenticado(
-	@ModelAttribute("usuario") Usuario usuario){
-
-		
-		ModelAndView mav = new ModelAndView("usuario/index");
-		mav.getModel().put("usuario", usuario);
-		return mav;
-		}
-	
 	@RequestMapping("/usuario/resetarSenha")
 	public String resetarSenha(){
 		return "/usuario/forgot_password";

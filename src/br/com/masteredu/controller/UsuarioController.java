@@ -79,7 +79,7 @@ public class UsuarioController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping("/usuario/resetarSenha")
+	@RequestMapping("/usuario/resetar-senha")
 	public String resetarSenha(){
 		return "/usuario/forgot_password";
 	}

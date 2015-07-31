@@ -19,7 +19,7 @@ public class ProfessorController {
 	@RequestMapping("professor/inicio")
 	public String alunoHome () {
 		
-		return "professor/home";
+		return "professor/home_professor";
 	}
 	
 	public String adicionaProfessor( Professor professor) {
@@ -33,8 +33,15 @@ public class ProfessorController {
 		}
 	}
 
-	private void validaProfessor(Professor professor) throws ProfessorInvalidoException {
+	
+	@RequestMapping("professor/lancar-notas")
+	public String lancarNotas() {
 		
+		return "professor/form_lancar_notas";
+	}
+	
+	private void validaProfessor(Professor professor) throws ProfessorInvalidoException {
+	
 		
 	}
 

@@ -48,6 +48,10 @@ public class Usuario {
 	@OneToOne(mappedBy="usuario")
 	Responsavel responsavel;
 	
+	@ManyToOne
+	@JoinColumn(name="id_unidade")
+	private Unidade unidade;
+	
 
 	// GETTERs AND SETTERs
 	public long getId() {
@@ -117,7 +121,13 @@ public class Usuario {
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
 	}
-	
-	
+
+	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
+	}
 	
 }

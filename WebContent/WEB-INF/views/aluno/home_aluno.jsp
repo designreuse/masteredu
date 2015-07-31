@@ -39,7 +39,7 @@
                                 <li><a href="contacts.jsp">Contatos</a></li>
                                 <li><a href="mailbox.jsp">Email</a></li>
                                 <li class="divider"></li>
-                                <li><a href="logout">Sair</a></li>
+                                <li><a href="../logout">Sair</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -348,7 +348,7 @@
 
 
                 <li>
-                    <a href="logout">
+                    <a href="../logout">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>

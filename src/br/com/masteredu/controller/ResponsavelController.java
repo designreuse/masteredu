@@ -19,7 +19,7 @@ public class ResponsavelController {
 	@RequestMapping("responsavel/inicio")
 	public String alunoHome () {
 		
-		return "responsavel/home";
+		return "responsavel/home_responsavel";
 	}
 	
 	@RequestMapping("adicionaResponsavel")

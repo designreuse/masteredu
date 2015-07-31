@@ -30,37 +30,42 @@ public class UsuarioController {
 	private IUsuarioDAO dao;
 	
 	@RequestMapping("/")
-	public String loginForm() {
+	public String index() {
 		return "/usuario/login";
 	}
 
+	@RequestMapping("usuario/login")
+	public String login() {
+		return "/usuario/login";
+	}
+	
 	@RequestMapping(value = "/logar", method = RequestMethod.POST)
 	public String logar(@RequestParam("login") String login, @RequestParam("senha") String senha, 
 			@RequestParam("") String tipoUsuario, HttpSession sessao) throws UsuarioInvalidoException {
 		
 		if (tipoUsuario != null) {
 			if (tipoUsuario.equals("aluno")) {
-				Aluno usuarioLogado = validarUsuario(login, senha).getAluno();
-				if (usuarioLogado != null) {
-					sessao.setAttribute("usuarioLogado", usuarioLogado);
+				Aluno alunoLogado = validarUsuario(login, senha).getAluno();
+				if (alunoLogado != null) {
+					sessao.setAttribute("alunoLogado", alunoLogado);
 					return "redirect:/aluno/inicio";
 				}
 				else {
 					throw new UsuarioInvalidoException();
 				}
 			} else if (tipoUsuario.equals("professor")) {
-				Professor usuarioLogado = validarUsuario(login, senha).getProfessor();
-				if (usuarioLogado != null) {
-					sessao.setAttribute("usuarioLogado", usuarioLogado);
+				Professor professorLogado = validarUsuario(login, senha).getProfessor();
+				if (professorLogado != null) {
+					sessao.setAttribute("professorLogado", professorLogado);
 					return "redirect:/professor/inicio";
 				}
 				else {
 					throw new UsuarioInvalidoException();
 				}
 			} else if (tipoUsuario.equals("responsavel")) {
-				Responsavel usuarioLogado = validarUsuario(login, senha).getResponsavel();
-				if (usuarioLogado != null) {
-					sessao.setAttribute("usuarioLogado", usuarioLogado);
+				Responsavel responsavelLogado = validarUsuario(login, senha).getResponsavel();
+				if (responsavelLogado != null) {
+					sessao.setAttribute("responsavelLogado", responsavelLogado);
 					return "redirect:/responsavel/inicio";
 				}
 				else {
@@ -90,6 +95,12 @@ public class UsuarioController {
 		dao.editar(usuario);
 		
 		return "";
+	}
+	
+	@RequestMapping("/usuario/acesso-nao-autorizado")
+	public String acessoNaoAutorizado() {
+		
+		return "pages/401";
 	}
 	
 	@RequestMapping("/usuario/ativar")

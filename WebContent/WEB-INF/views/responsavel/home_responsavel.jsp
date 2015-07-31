@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MasterEdu | Aluno</title>
+    <title>MasterEdu | Responsavel</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -32,8 +32,8 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element"> 
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${responsavelLogado.nome}</strong>
+                             </span>  </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.jsp">Perfil</a></li>
                                 <li><a href="contacts.jsp">Contatos</a></li>
@@ -364,7 +364,7 @@
                 <div class="row  border-bottom white-bg dashboard-header">
 
                     <div class="col-sm-3">
-                        <h2>Welcome Amelia</h2>
+                        <h2>Bem-vindo ${responsavelLogado.nome}</h2>
                         <small>You have 42 messages and 6 notifications.</small>
                         <ul class="list-group clear-list m-t">
                             <li class="list-group-item fist-item">

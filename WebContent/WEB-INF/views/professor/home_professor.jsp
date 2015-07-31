@@ -32,8 +32,8 @@
                     <li class="nav-header">
                         <div class="dropdown profile-element"> 
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${professorLogado.nome}</strong>
+                             </span> <span class="text-muted text-xs block">Professor<b class="caret"></b></span> </span> </a>
                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                 <li><a href="profile.jsp">Perfil</a></li>
                                 <li><a href="contacts.jsp">Contatos</a></li>
@@ -70,166 +70,7 @@
                             <li><a href="graph_sparkline.jsp">Sparkline Charts</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="mailbox.jsp"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="mailbox.jsp">Inbox</a></li>
-                            <li><a href="mail_detail.jsp">Email view</a></li>
-                            <li><a href="mail_compose.jsp">Compose email</a></li>
-                            <li><a href="email_template.jsp">Email templates</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="metrics.jsp"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span> <span class="label label-primary pull-right">NEW</span> </a>
-                    </li>
-                    <li>
-                        <a href="widgets.jsp"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="form_basic.jsp">Basic form</a></li>
-                            <li><a href="form_advanced.jsp">Advanced Plugins</a></li>
-                            <li><a href="form_wizard.jsp">Wizard</a></li>
-                            <li><a href="form_file_upload.jsp">File Upload</a></li>
-                            <li><a href="form_editors.jsp">Text Editor</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="contacts.jsp">Contacts</a></li>
-                            <li><a href="profile.jsp">Profile</a></li>
-                            <li><a href="projects.jsp">Projects</a></li>
-                            <li><a href="project_detail.jsp">Project detail</a></li>
-                            <li><a href="teams_board.jsp">Teams board</a></li>
-                            <li><a href="social_feed.jsp">Social feed</a></li>
-                            <li><a href="clients.jsp">Clients</a></li>
-                            <li><a href="full_height.jsp">Outlook view</a></li>
-                            <li><a href="file_manager.jsp">File manager</a></li>
-                            <li><a href="calendar.jsp">Calendar</a></li>
-                            <li><a href="issue_tracker.jsp">Issue tracker</a></li>
-                            <li><a href="blog.jsp">Blog</a></li>
-                            <li><a href="article.jsp">Article</a></li>
-                            <li><a href="faq.jsp">FAQ</a></li>
-                            <li><a href="timeline.jsp">Timeline</a></li>
-                            <li><a href="pin_board.jsp">Pin board</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="search_results.jsp">Search results</a></li>
-                            <li><a href="lockscreen.jsp">Lockscreen</a></li>
-                            <li><a href="invoice.jsp">Invoice</a></li>
-                            <li><a href="login.jsp">Login</a></li>
-                            <li><a href="login_two_columns.jsp">Login v.2</a></li>
-                            <li><a href="forgot_password.jsp">Forget password</a></li>
-                            <li><a href="register.jsp">Register</a></li>
-                            <li><a href="404.jsp">404 Page</a></li>
-                            <li><a href="500.jsp">500 Page</a></li>
-                            <li><a href="empty_page.jsp">Empty page</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="toastr_notifications.jsp">Notification</a></li>
-                            <li><a href="nestable_list.jsp">Nestable list</a></li>
-                            <li><a href="agile_board.jsp">Agile board</a></li>
-                            <li><a href="timeline_2.jsp">Timeline v.2</a></li>
-                            <li><a href="diff.jsp">Diff</a></li>
-                            <li><a href="sweetalert.jsp">Sweet alert</a></li>
-                            <li><a href="idle_timer.jsp">Idle timer</a></li>
-                            <li><a href="spinners.jsp">Spinners</a></li>
-                            <li><a href="tinycon.jsp">Live favicon</a></li>
-                            <li><a href="google_maps.jsp">Google maps</a></li>
-                            <li><a href="code_editor.jsp">Code editor</a></li>
-                            <li><a href="modal_window.jsp">Modal window</a></li>
-                            <li><a href="forum_main.jsp">Forum view</a></li>
-                            <li><a href="validation.jsp">Validation</a></li>
-                            <li><a href="tree_view.jsp">Tree view</a></li>
-                            <li><a href="chat_view.jsp">Chat view</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="typography.jsp">Typography</a></li>
-                            <li><a href="icons.jsp">Icons</a></li>
-                            <li><a href="draggable_panels.jsp">Draggable Panels</a></li>
-                            <li><a href="buttons.jsp">Buttons</a></li>
-                            <li><a href="video.jsp">Video</a></li>
-                            <li><a href="tabs_panels.jsp">Panels</a></li>
-                            <li><a href="tabs.jsp">Tabs</a></li>
-                            <li><a href="notifications.jsp">Notifications & Tooltips</a></li>
-                            <li><a href="badges_labels.jsp">Badges, Labels, Progress</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="grid_options.jsp"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="table_basic.jsp">Static Tables</a></li>
-                            <li><a href="table_data_tables.jsp">Data Tables</a></li>
-                            <li><a href="table_foo_table.jsp">Foo Tables</a></li>
-                            <li><a href="jq_grid.jsp">jqGrid</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="ecommerce_products_grid.jsp">Products grid</a></li>
-                            <li><a href="ecommerce_product_list.jsp">Products list</a></li>
-                            <li><a href="ecommerce_product.jsp">Product edit</a></li>
-                            <li><a href="ecommerce-orders.jsp">Orders</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li><a href="basic_gallery.jsp">Lightbox Gallery</a></li>
-                            <li><a href="carousel.jsp">Bootstrap Carusela</a></li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level collapse">
-                            <li>
-                                <a href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li><a href="#">Second Level Item</a></li>
-                            <li>
-                                <a href="#">Second Level Item</a></li>
-                            <li>
-                                <a href="#">Second Level Item</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="css_animation.jsp"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
-                    </li>
-                    <li class="landing_link">
-                        <a target="_blank" href="landing.jsp"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-                    </li>
-                    <li class="special_link">
-                        <a href="package.jsp"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-                    </li>
+                   
                 </ul>
 
             </div>
@@ -240,11 +81,6 @@
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="search_results.jsp">
-                <div class="form-group">
-                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                </div>
-            </form>
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
@@ -364,7 +200,7 @@
                 <div class="row  border-bottom white-bg dashboard-header">
 
                     <div class="col-sm-3">
-                        <h2>Welcome Amelia</h2>
+                        <h2>Bem-vindo ${professorLogado.nome}</h2>
                         <small>You have 42 messages and 6 notifications.</small>
                         <ul class="list-group clear-list m-t">
                             <li class="list-group-item fist-item">
@@ -399,52 +235,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="flot-chart dashboard-chart">
-                            <div class="flot-chart-content" id="flot-dashboard-chart"></div>
-                        </div>
-                        <div class="row text-left">
-                            <div class="col-xs-4">
-                                <div class=" m-l-md">
-                                <span class="h4 font-bold m-t block">$ 406,100</span>
-                                <small class="text-muted m-b block">Sales marketing report</small>
-                                </div>
-                            </div>
-                            <div class="col-xs-4">
-                                <span class="h4 font-bold m-t block">$ 150,401</span>
-                                <small class="text-muted m-b block">Annual sales revenue</small>
-                            </div>
-                            <div class="col-xs-4">
-                                <span class="h4 font-bold m-t block">$ 16,822</span>
-                                <small class="text-muted m-b block">Half-year revenue margin</small>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="statistic-box">
-                        <h4>
-                            Project Beta progress
-                        </h4>
-                        <p>
-                            You have two project with not compleated task.
-                        </p>
-                            <div class="row text-center">
-                                <div class="col-lg-6">
-                                    <canvas id="polarChart" width="80" height="80"></canvas>
-                                    <h5 >Kolter</h5>
-                                </div>
-                                <div class="col-lg-6">
-                                    <canvas id="doughnutChart" width="78" height="78"></canvas>
-                                    <h5 >Maxtor</h5>
-                                </div>
-                            </div>
-                            <div class="m-t">
-                                <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
-                            </div>
-
-                        </div>
-                    </div>
+                   
 
             </div>
         <div class="row">

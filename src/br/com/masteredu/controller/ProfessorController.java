@@ -16,6 +16,7 @@ public class ProfessorController {
 	@Autowired
 	private IProfessorDAO dao;
 	
+	
 	@RequestMapping("professor/inicio")
 	public String alunoHome () {
 		

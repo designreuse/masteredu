@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -9,12 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MasterEdu | Login</title>
+    
+    <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
+	<link href="<c:url value="/resources/css/plugins/iCheck/custom.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/animate.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
+ 
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
-	<link href="css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     
     <SCRIPT language="JavaScript" type="text/javascript">
     function isRadioButtonSelecionado(pNmRadioButton) {
@@ -65,7 +68,6 @@
             </div>
             <h3>Bem-vindo ao MasterEdu</h3>
             <p>Sistema perfeito para gerir uma instituição escolar, com os recursos necessários para obter o melhor controle.
-                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
             <p>Entre. Para vê-lo em ação.</p>
             <form class="m-t" role="form" action="logar" method="post" id="login">
@@ -89,22 +91,22 @@
                 <a href="resetarSenha"><small>Esqueceu sua senha?</small></a>
                 
             </form>
-            <p class="m-t"> <small>MasterEdu &copy; 2014</small> </p>
+            <p class="m-t"> <small>MasterEdu &copy; 2015</small> </p>
         </div>
     </div>
 
     <!-- Mainly scripts -->
-    <script src="js/jquery-2.1.1.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<c:url value="/resources/js/jquery-2.1.1.js"/>"></script>
+    <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/metisMenu/jquery.metisMenu.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/slimscroll/jquery.slimscroll.min.js"/>"></script>
 
     <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
+    <script src="<c:url value="/resources/js/inspinia.js"/>"></script>
+    <script src="<c:url value="/resources/js/plugins/pace/pace.min.js"/>"></script>
 
     <!-- iCheck -->
-    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="<c:url value="/resources/js/plugins/iCheck/icheck.min.js"/>"></script>
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({

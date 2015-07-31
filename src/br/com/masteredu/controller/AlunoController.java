@@ -22,7 +22,7 @@ public class AlunoController {
 	public String alunoHome () {
 		
 		
-		return "aluno/home";
+		return "aluno/home_aluno";
 	}
 	
 	@RequestMapping("adicionaAluno")

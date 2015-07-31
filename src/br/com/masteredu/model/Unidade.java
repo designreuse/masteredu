@@ -40,6 +40,9 @@ public class Unidade {
 	
 	@OneToMany(mappedBy = "unidade")
 	private List<Matricula> matriculas;
+	
+	@OneToMany(mappedBy = "unidade")
+	private List<Usuario> usuarios;
 
 	
 	// GETTERs AND SETTERs

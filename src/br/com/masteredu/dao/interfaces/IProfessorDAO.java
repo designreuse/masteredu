@@ -5,4 +5,6 @@ import br.com.masteredu.persistence.IDAO;
 
 public interface IProfessorDAO extends IDAO<Professor> {
 
+
+
 }

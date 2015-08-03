@@ -2,8 +2,10 @@ package br.com.masteredu.model;
 
 import java.util.Calendar;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.IndexColumn;
 
 @Entity
 public class Professor {
@@ -55,13 +59,13 @@ public class Professor {
 	@JoinColumn(name = "id_unidade")
 	private Unidade unidade;
 	
-	@ManyToMany
+	@ManyToMany(fetch= FetchType.EAGER) 
 	@JoinTable(name = "professores_turmas")
 	private List<Turma> turmas;
 	
-	@ManyToMany
+	@ManyToMany(fetch= FetchType.EAGER) 
 	@JoinTable(name = "professores_disciplinas")
-	private List<Disciplina> disciplinas;
+	private Set<Disciplina> disciplinas;
 	
 	
 	// GETTERs AND SETTERs	
@@ -174,11 +178,11 @@ public class Professor {
 		this.turmas = turmas;
 	}
 
-	public List<Disciplina> getDisciplinas() {
+	public Set<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
 
-	public void setDisciplinas(List<Disciplina> disciplinas) {
+	public void setDisciplinas(Set<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
 	

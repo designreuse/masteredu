@@ -44,7 +44,7 @@ public class JpaUsuarioDAO implements IUsuarioDAO{
 	}
 
 	@Override
-	public Usuario getUsuario(String login, String senha) {
+	public Usuario verificaSeExiste(String login, String senha) {		
 		String consulta = "select u from Usuario u where u.login = :login and u.senha = :senha";
 		TypedQuery<Usuario> query =
 		manager.createQuery(consulta, Usuario.class);

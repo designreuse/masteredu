@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class AutorizadorProfessorInterceptor extends HandlerInterceptorAdapter {
+import com.sun.org.apache.bcel.internal.generic.GETSTATIC;
+
+public class AutorizadorUsuarioInterceptor extends HandlerInterceptorAdapter {
 
 	public boolean preHandle(HttpServletRequest request,
 							HttpServletResponse response,
@@ -17,10 +19,12 @@ public class AutorizadorProfessorInterceptor extends HandlerInterceptorAdapter {
 		
 		if(request.getSession().getAttribute("professorLogado") != null
 				|| request.getSession().getAttribute("alunoLogado") != null
-				|| request.getSession().getAttribute("responsavelLogado") != null) {
+				|| request.getSession().getAttribute("responsavelLogado") != null
+				|| request.getSession().getAttribute("adminLogado") != null) {
 			return true;
 		} else {
-			response.sendRedirect("../usuario/login");
+			String contexto = request.getContextPath();
+			response.sendRedirect(contexto + "/login");
 			return false;
 		}
 	}

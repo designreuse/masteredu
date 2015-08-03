@@ -46,7 +46,7 @@
 	
 	<!-- Interceptadores para validar acesso -->
 	<mvc:interceptors>
-		<bean class="br.com.masteredu.interceptor.AutorizadorProfessorInterceptor"/>
+		<bean class="br.com.masteredu.interceptor.AutorizadorUsuarioInterceptor"/>
 	</mvc:interceptors>
 
 	<!-- Bean que representa a EntityManagerFactory, mas agora gerenciada pelo 

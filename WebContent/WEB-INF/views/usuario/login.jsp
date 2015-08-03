@@ -16,48 +16,36 @@
 	<link href="<c:url value="/resources/css/plugins/iCheck/custom.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/animate.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/style.css"/>" rel="stylesheet">
- 
-
     
-    <SCRIPT language="JavaScript" type="text/javascript">
-    function isRadioButtonSelecionado(pNmRadioButton) {
-    	var i = 0;
-
-    	radioButton = eval(pNmRadioButton);
-    	
-    	if (radioButton == null) {
-    		return false;
+    <script type="text/javascript">
+    function valida_login(){ 
+       	//valido o login
+       	if (document.form_login.login.value.length==0){ 
+          	alert("Informe um login!") 
+          	document.form_login.login.focus() 
+          	return 0; 
+       	}
+       	
+       	//valido a senha 
+       	if (document.form_login.senha.value.length==0){ 
+          	alert("Informe uma senha!") 
+          	document.form_login.senha.focus() 
+          	return 0; 
+       	}
+       	
+		    if(document.form_login.unidade.selectedIndex==0){
+		        alert("Informe uma unidade!");
+		        document.form_login.unidade.focus();
+		        return 0;
+		    }
+		    
+		    document.form_login.submit(); 
     	}
-    	
-    	if (radioButton.checked) {
-    		// Quando existe apenas um radio button no formulario
-    		return true;
-    	}
-    	
-    	for (i = 0; i < radioButton.length; i++) {
-    		if (radioButton.item(i).checked == true) {
-    			return true;
-    		}
-    	}
-    	
-    
-    	return false;
-    }
-    
-	    function atualizarBotoes() {
-	    	
-	    	if (isRadioButtonSelecionado(document.login.tipoUsuario)) {
-	    		document.getElementById("btEntrar").disabled = false;
-	    	} else {
-	    		document.getElementById("btEntrar").disabled = true;
-	    	}
-	    		
-	    }
-    </SCRIPT>
+    </script>
 
 </head>
 
-<body class="gray-bg" onLoad="atualizarBotoes();">
+<body class="gray-bg">
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
@@ -70,23 +58,25 @@
             <p>Sistema perfeito para gerir uma instituição escolar, com os recursos necessários para obter o melhor controle.
             </p>
             <p>Entre. Para vê-lo em ação.</p>
-            <form class="m-t" role="form" action="logar" method="post" id="login">
+            <form name="form_login" class="m-t" role="form" action="logar" method="post" id="login">
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Login" required="" name="login">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Senha" required="" name="senha">
                 </div>
-                <div class="form-group"><label class="col-sm-2 control-label">Entrar como: <br/></label>
-
-                                    <div class="col-sm-10">
-                                        <div class="i-checks"><label> <input type="radio" class="form-control"  value="aluno" name="tipoUsuario" onclick="atualizarBotoes()" class="required"> <i></i> Aluno </label></div>
-                                        <div class="i-checks"><label> <input type="radio" class="form-control" value="responsavel" name="tipoUsuario" onclick="atualizarBotoes()" class="required"> <i></i> Responsável </label></div>
-                                        <div class="i-checks"><label> <input type="radio" class="form-control" value="professor" name="tipoUsuario" onclick="atualizarBotoes()" class="required"> <i></i> Professor </label></div>
-                                        
-                                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary block full-width m-b" id="btEntrar">Entrar</button>
+                <div class="form-group">
+					<select class="form-control m-b" name="unidade" required="">
+						<option>- Escolha uma unidade -</option>
+						
+						<c:forEach items="${unidades}" var="unidade">
+							<option>${unidade.nome}</option>
+						</c:forEach>
+						
+					</select>
+				</div>
+          
+                <button type="button" class="btn btn-primary block full-width m-b" id="btEntrar" onclick="valida_login()">Entrar</button>
 
                 <a href="resetarSenha"><small>Esqueceu sua senha?</small></a>
                 

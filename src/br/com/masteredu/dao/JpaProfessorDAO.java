@@ -4,11 +4,14 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.stereotype.Repository;
 
 import br.com.masteredu.dao.interfaces.IProfessorDAO;
 import br.com.masteredu.model.Professor;
+import br.com.masteredu.model.Turma;
+import br.com.masteredu.model.Usuario;
 
 @Repository
 public class JpaProfessorDAO implements IProfessorDAO{

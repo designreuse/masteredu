@@ -52,6 +52,13 @@ public class Usuario {
 	@JoinColumn(name="id_unidade")
 	private Unidade unidade;
 	
+	private boolean isAluno;
+	
+	private boolean isProfessor;
+	
+	private boolean isResponsavel;
+	
+	private boolean isAdmin;	
 
 	// GETTERs AND SETTERs
 	public long getId() {
@@ -128,6 +135,38 @@ public class Usuario {
 
 	public void setUnidade(Unidade unidade) {
 		this.unidade = unidade;
+	}
+
+	public boolean isAluno() {
+		return isAluno;
+	}
+
+	public void setAluno(boolean isAluno) {
+		this.isAluno = isAluno;
+	}
+
+	public boolean isProfessor() {
+		return isProfessor;
+	}
+
+	public void setProfessor(boolean isProfessor) {
+		this.isProfessor = isProfessor;
+	}
+
+	public boolean isResponsavel() {
+		return isResponsavel;
+	}
+
+	public void setResponsavel(boolean isResponsavel) {
+		this.isResponsavel = isResponsavel;
+	}
+
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	
 }

@@ -1,6 +1,7 @@
 package br.com.masteredu.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Disciplina {
 	private List<Prova> provas;
 	
 	@ManyToMany(mappedBy = "disciplinas")
-	private List<Professor> professores;
+	private Set<Professor> professores;
 	
 	@ManyToMany(mappedBy = "disciplinas")
 	private List<Turma> turmas;
@@ -77,11 +78,11 @@ public class Disciplina {
 		this.provas = provas;
 	}
 
-	public List<Professor> getProfessores() {
+	public Set<Professor> getProfessores() {
 		return professores;
 	}
 
-	public void setProfessores(List<Professor> professores) {
+	public void setProfessores(Set<Professor> professores) {
 		this.professores = professores;
 	}
 

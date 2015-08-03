@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MasterEdu | Professor</title>
+    <title>MasterEdu | Agendar Prova</title>
 
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/font-awesome/css/font-awesome.css"/>" rel="stylesheet">
@@ -39,7 +39,7 @@
                                 <li><a href="contacts.jsp">Contatos</a></li>
                                 <li><a href="mailbox.jsp">Email</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<%= request.getContextPath() + "/logout" %>">Sair</a></li>
+                                <li><a href="../logout">Sair</a></li>
                             </ul>
                         </div>
                         <div class="logo-element">
@@ -61,7 +61,7 @@
                     <li>
                         <a href="realizar-chamada"><i class="fa fa-edit"></i> <span class="nav-label">Realizar chamada</span></a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="agendar-prova"><i class="fa fa-files-o"></i> <span class="nav-label">Agendar prova</span></a>
                     </li>
                    
@@ -78,393 +78,33 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Bem-vindo ao MasterEdu.</span>
-                </li>
-                <li>
-                    <a href="<%= request.getContextPath() + "/logout" %>">
+                    <a href="../logout">
                         <i class="fa fa-sign-out"></i> Sair
                     </a>
                 </li>
-                <li>
-                    <a class="right-sidebar-toggle">
-                        <i class="fa fa-tasks"></i>
-                    </a>
-                </li>
             </ul>
-
         </nav>
         </div>
-                <div class="row  border-bottom white-bg dashboard-header">
+         <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>Lançar Notas</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="inicio">Home</a>
+                        </li>
+                        <li class="active">
+                            <strong>Lançar Notas</strong>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
 
-                    <div class="col-sm-3">
-                        <h2>Bem-vindo ${professorLogado.nome}</h2>
-                        <small>You have 42 messages and 6 notifications.</small>
-                        <ul class="list-group clear-list m-t">
-                            <li class="list-group-item fist-item">
-                                <span class="pull-right">
-                                    09:00 pm
-                                </span>
-                                <span class="label label-success">1</span> Please contact me
-                            </li>
-                            <li class="list-group-item">
-                                <span class="pull-right">
-                                    10:16 am
-                                </span>
-                                <span class="label label-info">2</span> Sign a contract
-                            </li>
-                            <li class="list-group-item">
-                                <span class="pull-right">
-                                    08:22 pm
-                                </span>
-                                <span class="label label-primary">3</span> Open new shop
-                            </li>
-                            <li class="list-group-item">
-                                <span class="pull-right">
-                                    11:06 pm
-                                </span>
-                                <span class="label label-default">4</span> Call back to Sylvia
-                            </li>
-                            <li class="list-group-item">
-                                <span class="pull-right">
-                                    12:00 am
-                                </span>
-                                <span class="label label-primary">5</span> Write a letter to Sandra
-                            </li>
-                        </ul>
-                    </div>
-                   
-
+                </div>
             </div>
         <div class="row">
             <div class="col-lg-12">
                 <div class="wrapper wrapper-content">
-                        <div class="row">
-                        <div class="col-lg-4">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>New data for the report</h5> <span class="label label-primary">IN+</span>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content">
-                                    <div>
-
-                                        <div class="pull-right text-right">
-
-                                            <span class="bar_dashboard">5,3,9,6,5,9,7,3,5,2,4,7,3,2,7,9,6,4,5,7,3,2,1,0,9,5,6,8,3,2,1</span>
-                                            <br/>
-                                            <small class="font-bold">$ 20 054.43</small>
-                                        </div>
-                                        <h4>NYS report new data!
-                                            <br/>
-                                            <small class="m-r"><a href="graph_flot.jsp"> Check the stock price! </a> </small>
-                                        </h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Read below comments</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content no-padding">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Stock Man</a> Check this stock chart. This price is crazy! </p>
-                                            <div class="text-center m">
-                                                <span id="sparkline8"></span>
-                                            </div>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 hours ago</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown printer took a galley </p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
-                                        </li>
-                                        <li class="list-group-item ">
-                                            <p><a class="text-info" href="#">@Jonathan Febrick</a> The standard chunk of Lorem Ipsum</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 hour ago</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Alan Marry</a> I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 1 minuts ago</small>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <p><a class="text-info" href="#">@Kevin Smith</a> Lorem ipsum unknown printer took a galley </p>
-                                            <small class="block text-muted"><i class="fa fa-clock-o"></i> 2 minuts ago</small>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                            <div class="col-lg-4">
-                                <div class="ibox float-e-margins">
-                                    <div class="ibox-title">
-                                        <h5>Your daily feed</h5>
-                                        <div class="ibox-tools">
-                                            <span class="label label-warning-light">10 Messages</span>
-                                           </div>
-                                    </div>
-                                    <div class="ibox-content">
-
-                                        <div>
-                                            <div class="feed-activity-list">
-
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/profile.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">5m ago</small>
-                                                        <strong>Monica Smith</strong> posted a new blog. <br>
-                                                        <small class="text-muted">Today 5:60 pm - 12.06.2014</small>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a2.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Mark Johnson</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                        <small class="text-muted">Today 2:10 pm - 12.06.2014</small>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a3.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Janet Rosowski</strong> add 1 photo on <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">2 days ago at 8:30am</small>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a4.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right text-navy">5h ago</small>
-                                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                                        <div class="actions">
-                                                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                            <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a5.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">2h ago</small>
-                                                        <strong>Kim Smith</strong> posted message on <strong>Monica Smith</strong> site. <br>
-                                                        <small class="text-muted">Yesterday 5:20 pm - 12.06.2014</small>
-                                                        <div class="well">
-                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                        </div>
-                                                        <div class="pull-right">
-                                                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/profile.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">23h ago</small>
-                                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                                    </div>
-                                                </div>
-                                                <div class="feed-element">
-                                                    <a href="profile.jsp" class="pull-left">
-                                                        <img alt="image" class="img-circle" src="<c:url value="/resources/img/a7.jpg"/>">
-                                                    </a>
-                                                    <div class="media-body ">
-                                                        <small class="pull-right">46h ago</small>
-                                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <button class="btn btn-primary btn-block m-t"><i class="fa fa-arrow-down"></i> Show More</button>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        <div class="col-lg-4">
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Alpha project</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link">
-                                            <i class="fa fa-chevron-up"></i>
-                                        </a>
-                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                            <i class="fa fa-wrench"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-user">
-                                            <li><a href="#">Config option 1</a>
-                                            </li>
-                                            <li><a href="#">Config option 2</a>
-                                            </li>
-                                        </ul>
-                                        <a class="close-link">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content ibox-heading">
-                                    <h3>You have meeting today!</h3>
-                                    <small><i class="fa fa-map-marker"></i> Meeting is on 6:00am. Check your schedule to see detail.</small>
-                                </div>
-                                <div class="ibox-content inspinia-timeline">
-
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-briefcase"></i>
-                                                6:00 am
-                                                <br/>
-                                                <small class="text-navy">2 hour ago</small>
-                                            </div>
-                                            <div class="col-xs-7 content no-top-border">
-                                                <p class="m-b-xs"><strong>Meeting</strong></p>
-
-                                                <p>Conference on the sales results for the previous year. Monica please examine sales trends in marketing and products. Below please find the current status of the
-                                                    sale.</p>
-
-                                                <p><span data-diameter="40" class="updating-chart">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,4,7,3,2,9,8,7,4,5,1,2,9,5,4,7,2,7,7,3,5,2</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-file-text"></i>
-                                                7:00 am
-                                                <br/>
-                                                <small class="text-navy">3 hour ago</small>
-                                            </div>
-                                            <div class="col-xs-7 content">
-                                                <p class="m-b-xs"><strong>Send documents to Mike</strong></p>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-coffee"></i>
-                                                8:00 am
-                                                <br/>
-                                            </div>
-                                            <div class="col-xs-7 content">
-                                                <p class="m-b-xs"><strong>Coffee Break</strong></p>
-                                                <p>
-                                                    Go to shop and find some products.
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-phone"></i>
-                                                11:00 am
-                                                <br/>
-                                                <small class="text-navy">21 hour ago</small>
-                                            </div>
-                                            <div class="col-xs-7 content">
-                                                <p class="m-b-xs"><strong>Phone with Jeronimo</strong></p>
-                                                <p>
-                                                    Lorem Ipsum has been the industry's standard dummy text ever since.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-user-md"></i>
-                                                09:00 pm
-                                                <br/>
-                                                <small>21 hour ago</small>
-                                            </div>
-                                            <div class="col-xs-7 content">
-                                                <p class="m-b-xs"><strong>Go to the doctor dr Smith</strong></p>
-                                                <p>
-                                                    Find some issue and go to doctor.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="row">
-                                            <div class="col-xs-3 date">
-                                                <i class="fa fa-comments"></i>
-                                                12:50 pm
-                                                <br/>
-                                                <small class="text-navy">48 hour ago</small>
-                                            </div>
-                                            <div class="col-xs-7 content">
-                                                <p class="m-b-xs"><strong>Chat with Monica and Sandra</strong></p>
-                                                <p>
-                                                    Web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                       
 
                         </div>
                 </div>
@@ -480,7 +120,90 @@
         </div>
 
         </div>
-     
+        <div class="small-chat-box fadeInRight animated">
+
+            <div class="heading" draggable="true">
+                <small class="chat-date pull-right">
+                    02.19.2015
+                </small>
+                Small chat
+            </div>
+
+            <div class="content">
+
+                <div class="left">
+                    <div class="author-name">
+                        Monica Jackson <small class="chat-date">
+                        10:02 am
+                    </small>
+                    </div>
+                    <div class="chat-message active">
+                        Lorem Ipsum is simply dummy text input.
+                    </div>
+
+                </div>
+                <div class="right">
+                    <div class="author-name">
+                        Mick Smith
+                        <small class="chat-date">
+                            11:24 am
+                        </small>
+                    </div>
+                    <div class="chat-message">
+                        Lorem Ipsum is simpl.
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="author-name">
+                        Alice Novak
+                        <small class="chat-date">
+                            08:45 pm
+                        </small>
+                    </div>
+                    <div class="chat-message active">
+                        Check this stock char.
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="author-name">
+                        Anna Lamson
+                        <small class="chat-date">
+                            11:24 am
+                        </small>
+                    </div>
+                    <div class="chat-message">
+                        The standard chunk of Lorem Ipsum
+                    </div>
+                </div>
+                <div class="left">
+                    <div class="author-name">
+                        Mick Lane
+                        <small class="chat-date">
+                            08:45 pm
+                        </small>
+                    </div>
+                    <div class="chat-message active">
+                        I belive that. Lorem Ipsum is simply dummy text.
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-chat">
+                <div class="input-group input-group-sm"><input type="text" class="form-control"> <span class="input-group-btn"> <button
+                        class="btn btn-primary" type="button">Send
+                </button> </span></div>
+            </div>
+
+        </div>
+        <div id="small-chat">
+
+            <span class="badge badge-warning pull-right">5</span>
+            <a class="open-small-chat">
+                <i class="fa fa-comments"></i>
+
+            </a>
+        </div>
         <div id="right-sidebar">
             <div class="sidebar-container">
 

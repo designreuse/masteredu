@@ -5,6 +5,6 @@ import br.com.masteredu.persistence.IDAO;
 
 public interface IUsuarioDAO extends IDAO<Usuario> {
 	
-	Usuario getUsuario(String login, String senha);
+	Usuario verificaSeExiste(String login, String senha);
 
 }

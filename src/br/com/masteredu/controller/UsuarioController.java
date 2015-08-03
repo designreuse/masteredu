@@ -27,62 +27,7 @@ import br.com.masteredu.model.enums.Situacao;
 public class UsuarioController {
 	
 	@Autowired
-	private IUsuarioDAO dao;
-	
-	@RequestMapping("/")
-	public String index() {
-		return "/usuario/login";
-	}
-
-	@RequestMapping("usuario/login")
-	public String login() {
-		return "/usuario/login";
-	}
-	
-	@RequestMapping(value = "/logar", method = RequestMethod.POST)
-	public String logar(@RequestParam("login") String login, @RequestParam("senha") String senha, 
-			@RequestParam("") String tipoUsuario, HttpSession sessao) throws UsuarioInvalidoException {
-		
-		if (tipoUsuario != null) {
-			if (tipoUsuario.equals("aluno")) {
-				Aluno alunoLogado = validarUsuario(login, senha).getAluno();
-				if (alunoLogado != null) {
-					sessao.setAttribute("alunoLogado", alunoLogado);
-					return "redirect:/aluno/inicio";
-				}
-				else {
-					throw new UsuarioInvalidoException();
-				}
-			} else if (tipoUsuario.equals("professor")) {
-				Professor professorLogado = validarUsuario(login, senha).getProfessor();
-				if (professorLogado != null) {
-					sessao.setAttribute("professorLogado", professorLogado);
-					return "redirect:/professor/inicio";
-				}
-				else {
-					throw new UsuarioInvalidoException();
-				}
-			} else if (tipoUsuario.equals("responsavel")) {
-				Responsavel responsavelLogado = validarUsuario(login, senha).getResponsavel();
-				if (responsavelLogado != null) {
-					sessao.setAttribute("responsavelLogado", responsavelLogado);
-					return "redirect:/responsavel/inicio";
-				}
-				else {
-					throw new UsuarioInvalidoException();
-				}
-			}
-		} else {
-			System.out.println("Tipo de usuário nulo");
-		}
-		return "index";   
-	}
-
-	@RequestMapping("/logout")
-	public String logout() {
-		
-		return "redirect:/";
-	}
+	private IUsuarioDAO dao;	
 	
 	@RequestMapping("/usuario/resetar-senha")
 	public String resetarSenha(){
@@ -132,16 +77,6 @@ public class UsuarioController {
 		mav.getModel().put("usuarios", usuarios);
 		
 		return mav;
-	}
-	
-	
-
-	private Usuario validarUsuario(String login, String senha) {
-		Usuario usuario = dao.getUsuario(login, senha);
-		usuario.setUltimoLogin(Calendar.getInstance());
-		dao.editar(usuario);
-		return usuario;
-	}
-	
+	}	
 	
 }

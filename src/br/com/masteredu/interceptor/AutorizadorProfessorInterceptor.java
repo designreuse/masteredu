@@ -20,7 +20,7 @@ public class AutorizadorProfessorInterceptor extends HandlerInterceptorAdapter {
 				|| request.getSession().getAttribute("responsavelLogado") != null) {
 			return true;
 		} else {
-			response.sendRedirect("/usuario/login");
+			response.sendRedirect("../usuario/login");
 			return false;
 		}
 	}
